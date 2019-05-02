@@ -7,9 +7,5 @@ Click through the canvas to cycle through randomly selected pattern & color elem
 To aid your creation, you can turn on the Auto-Generator to let the machine co-create with you. It won't change the pattern you have created, but everything else is fair game.
 
 ## Keyboard Shortcuts
-Q: Add a Bubble
-P: Remove a Bubble
-Spacebar: Play/Pause Bubble Tones
-
-## Audio Interactions
-The tones that play when Bubbles collide with the wall are selected from the root tone’s major and minor scales. The selection of the scale and tone has some randomness built in, which is intended to create even more unexpected variety in each composition.
+Q: Create a random pattern
+R: Rotate a pattern block

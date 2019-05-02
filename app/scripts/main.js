@@ -31,7 +31,7 @@ function setupInteraction() {
     document.querySelector('#grid-size-readout').innerHTML = e.target.value;
   }, false);
 
-  // AUTO-GENE  RATE SLIDER
+  // AUTO-GENERATE SLIDER
   document.querySelector('#autoplay-speed').addEventListener('input', function(e){
     // SET DURATION
     autoPlayDuration = maxDuration - e.target.value;
