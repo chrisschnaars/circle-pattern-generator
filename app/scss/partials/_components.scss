@@ -1,0 +1,20 @@
+// ===========================================
+// LINKS
+// ===========================================
+
+// GLOBAL LINK STYLE
+a {
+  color: $black;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
+
+}
+
+a:hover {
+  border: none;
+  opacity: 0.75;
+}
+
+a:visited {
+  color: $black;
+}

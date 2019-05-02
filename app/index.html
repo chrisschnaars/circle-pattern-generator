@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Circle Pattern Generator</title>
+    <meta name="description" content="Click and rotate your way to a beautiful pattern.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- P5JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script> -->
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+
+  </head>
+
+  <body>
+    <div id="controls-container" class="cp-visible">
+
+      <!-- INFO AND CONTROLS -->
+      <div id="control-panel">
+
+        <!-- PATTERN INTRO AND INSTRUCTIONS -->
+        <div class="control-element">
+          <h1>Circle Pattern Generator</h1>
+
+          <p class="content"><span class="heavy">Click</span> to cycle through the shapes. Press <span class="heavy">r</span> to rotate a shape. Colors are chosen at random. If you need help getting started, try pressing <span class="heavy">q</span>.</p>
+
+          <p class="content">This is an interactive art tool built by <a href="https://www.schnaars.xyz">Chris Schnaars</a>. You can find more info on Github.</p>
+        </div>
+
+        <!-- GRID SIZE CONTROL -->
+        <div class="control-element grid-size-control">
+          <div class="slider-info-container">
+            <label for="grid-size" class="control-label">Grid Size</label>
+            <p id="grid-size-readout" class="control-readout">100</p>
+          </div>
+          <input name="grid-size" id="grid-size" type="range" role="slider" min="80" max="200" value="100" step="2" aria-valuemin="80" aria-valuemax="200" aria-valuenow="100">
+        </div>
+
+        <!-- AUTO PLAY CONTROL -->
+        <div class="control-element autoplay-speed-control">
+          <div class="slider-info-container">
+            <label for="autoplay-speed" class="control-label">Auto-Generate Speed</label>
+          </div>
+          <input name="autoplay-speed" id="autoplay-speed" type="range" role="slider" min="0" max="100" value="0" step="1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        </div>
+
+        <!-- COLOR PICKERS -->
+        <div class="control-element control-group-container color-selectors">
+          <div class="control-group-item">
+            <!-- LABEL -->
+            <label for="bg-color" class="control-label">Background</label>
+            <!-- BG COLOR CONTROL -->
+            <input name="bg-color" id="bg-color" type="color" value="#DBE2E7">
+          </div>
+
+          <div class="control-group-item">
+            <!-- LABEL -->
+            <label class="control-label">Shape Colors</label>
+            <!-- SHAPE COLORS -->
+            <input name="shape-color-01" id="shape-color-01" type="color" value="#00B67D">
+            <input name="shape-color-02" id="shape-color-02" type="color" value="#2A3041">
+            <input name="shape-color-03" id="shape-color-03" type="color" value="#FFBF35">
+          </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="control-element">
+          <button id="save-btn" class="primary-button" type="button" name="Save" aria-label="Save Pattern">
+            Save Pattern (s)
+          </button>
+        </div>
+
+      </div>
+
+      <!-- MENU HINT -->
+      <div id="control-footer">
+        <p>Show and hide this menu using the <span class="heavy">shift</span> key.</p>
+      </div>
+
+    <!-- END MENU -->
+    </div>
+
+    <!-- CANVAS CONTAINER -->
+    <div id="pattern-container">
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+  </body>
+
+</html>

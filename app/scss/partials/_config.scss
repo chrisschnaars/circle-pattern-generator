@@ -1,0 +1,72 @@
+/**************************************
+TYPOGRAPHY & SIZING
+**************************************/
+
+$base-font-size:            16px !default;
+
+// FONT SIZES
+$h1-font-size:              1.5rem !default;
+$p-font-size:               1rem !default;
+$p-font-size-sm:            0.875rem !default;
+
+// LINE HEIGHT
+$h1-line-height:            2rem !default;
+$p-line-height:             1.5 !default;
+
+// FONT WEIGHTS
+$font-weight-heavy:         700 !default;
+$font-weight-normal:        400 !default;
+
+// CONTROL BUTTON LABELS
+$ui-label-font-size:        .9375rem !default;
+$ui-label-font-size-sm:     .8125rem !default;
+$ui-label-line-height:      1.25rem !default;
+
+// CONTROL BUTTON TYPE
+$ui-type-size:              0.875rem !default;
+$ui-line-height:            1rem !default;
+
+
+/**************************************
+GRIDS AND SPACING
+**************************************/
+
+// GLOBAL SPACING UNIT
+$spacing-unit:            1rem !default;
+
+// CONTROL PANEL
+$control-panel-width:     24rem !default;
+$cp-footer-height:        4.5rem !default;
+
+// CONTROLS
+$controls-max-width:      80rem !default;
+$controls-max-height:     4rem !default;  // height of control + label
+$controls-height:         3rem !default; // height of each control
+
+// PRIMARY BUTTON SIZING
+$primary-btn-size:        4rem !default;
+
+
+/**************************************
+COLOR PALETTE
+**************************************/
+
+// GRAYSCALE
+$white:  #FFFFFF;
+$gray-1: #E9ECEF;
+$gray-2: #CED4DA;
+$gray-3: #868E96;
+$black:  #212529;
+
+/**************************************
+ANIMATION BEHAVIORS
+**************************************/
+
+$animate-time-fast:     0.15s !default;
+$animate-time-slow:     0.35s !default;
+
+/**************************************
+STYLING
+**************************************/
+
+$btn-border-radius: 0.25rem;

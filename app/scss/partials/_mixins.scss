@@ -1,0 +1,124 @@
+// ===========================================
+// RESPONSIVE / MEDIA QUERIES
+// ===========================================
+
+// // SMALLEST SCREENS
+// @mixin bp1 {
+//   @media (max-width: #{$bp-1}) {
+//     @content;
+//   }
+// }
+//
+// // SMALLEST SCREENS
+// @mixin bp2 {
+//   @media (max-width: #{$bp-2}) {
+//     @content;
+//   }
+// }
+//
+// // HIDE ON SMALLEST SCREENS
+// .bp1-hidden {
+//   @media (max-width: #{$bp-1}) {
+//     display: none !important;
+//   }
+// }
+//
+// // SHOW ON SMALLEST SCREENS
+// .bp1-visible {
+//   @media (min-width: #{$bp-1}) {
+//       display: none;
+//     }
+// }
+
+// ===========================================
+// SPACING, SIZING AND POSITIONING
+// ===========================================
+
+@mixin padding($y-axis, $x-axis) {
+  padding-top: $spacing-unit * $y-axis;
+  padding-right: $spacing-unit * $x-axis;
+  padding-bottom: $spacing-unit * $y-axis;
+  padding-left: $spacing-unit * $x-axis;
+}
+
+// GLOBAL LAYOUT PADDING
+@mixin horizontal-layout-padding {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  @include bp1 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+// ===========================================
+// TRANSITIONS AND TRANSFORMATIONS
+// ===========================================
+
+// TRANSITIONS
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Generic Transform
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// Scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// ===========================================
+// STYLING
+// ===========================================
+
+// BORDER RADIUS
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+// BORDER RAIDUS WHERE ARE BORDERS CAN BE UNIQUE
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+	border-top-left-radius: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+	-webkit-border-top-left-radius: $topleft;
+	-webkit-border-top-right-radius: $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius: $bottomleft;
+	-moz-border-radius-topleft: $topleft;
+	-moz-border-radius-topright: $topright;
+	-moz-border-radius-bottomright: $bottomright;
+	-moz-border-radius-bottomleft: $bottomleft;
+}
+
+@mixin box-shadow( $horiz, $vert, $blur, $spread, $color) {
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
+}
+
+@mixin global-box-shadow( $horiz : 0px , $vert : 1px, $blur : 4px , $spread : 0px , $color : rgba(0,0,0,.1) ){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
+}
+
+@mixin box-shadow-btn-focus() {
+  -webkit-box-shadow: $white 0px 0px 0px 0.25rem;
+  -moz-box-shadow: $white 0px 0px 0px 0.25rem;
+  box-shadow: $white 0px 0px 0px 0.25rem;
+}

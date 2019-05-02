@@ -1,0 +1,42 @@
+/*
+ ALL INTERACTIVE CONTROLS
+*/
+
+h1 {
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+  font-weight: $font-weight-heavy;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: $p-font-size;
+  line-height: $p-line-height;
+}
+
+// CONTROL LABELS
+label, p.control-label {
+  font-size: $ui-label-font-size;
+  line-height: $ui-label-line-height;
+  font-weight: $font-weight-heavy;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+// CONTROL READOUT
+p.control-readout {
+  @extend label;
+  font-weight: $font-weight-normal;
+}
+
+// CONTENT STYLES
+p.content {
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// GLOBAL MODIFIERS
+.heavy { font-weight: $font-weight-heavy; }
+.small { font-size:  $ui-label-font-size; }

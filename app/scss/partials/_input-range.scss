@@ -1,0 +1,120 @@
+/// The draghandle
+$thumb-color: $black !default;
+$thumb-radius: 100% !default;
+$thumb-height: 1.5rem !default;
+$thumb-width: 1.5rem !default;
+$thumb-border-width: 0px !default;
+$thumb-border-color: $black !default;
+$thumb-shadow-size: 0.125rem !default;
+$thumb-shadow-blur: 0.25rem !default;
+$thumb-shadow-color: rgba(0, 0, 0, 0.25) !default;
+
+// The range
+$track-color: $gray-2 !default;
+$track-radius: 0rem !default;
+$track-width: 100% !default;
+$track-height: 0.25rem !default;
+$track-border-width: 0px !default;
+$track-border-color: $gray-2 !default;
+$track-shadow-size: 0px !default;
+$track-shadow-blur: 0px !default;
+$track-shadow-color: rgba(0, 0, 0, 0) !default;
+
+// SLIDER TRACK
+@mixin track {
+  width: $track-width;
+  height: $track-height;
+  cursor: pointer;
+  animation: $animate-time-fast;
+}
+
+@mixin thumb {
+  // @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  @include global-box-shadow;
+  width: $thumb-width;
+  height: $thumb-height;
+  cursor: pointer;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  background: $thumb-color;
+
+  &:focus {
+    @include box-shadow-btn-focus;
+  }
+}
+
+@mixin input-type-range {
+  -webkit-appearance: none;
+  width: $track-width;
+  background: transparent;
+
+  &:focus {
+    // outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include box-shadow(0, 0, 0, 0, rgba(0,0,0,0));
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    background: $track-color;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    // margin-top: ($track-height) / (2 - $thumb-height / 2);
+    margin-top: -0.675rem;
+
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: $track-color;
+  }
+
+  &::-moz-range-track {
+    @include track;
+    @include box-shadow(0, 0, 0, 0, rgba(0,0,0,0));
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    background: $track-color;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    color: transparent;
+    border-width: $thumb-width 0;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include box-shadow(0, 0, 0, 0, rgba(0,0,0,0));
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+    background: $track-color;
+  }
+
+  &::-ms-fill-upper {
+    @include box-shadow(0, 0, 0, 0, rgba(0,0,0,0));
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+    background: $track-color;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+  }
+
+  &:focus::-ms-fill-lower {
+    background: $track-color;
+  }
+
+  &:focus::-ms-fill-upper {
+    background: $track-color;
+  }
+}

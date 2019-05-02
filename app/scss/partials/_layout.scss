@@ -1,0 +1,95 @@
+/**************************************
+MAIN INTERACTION AREA
+**************************************/
+
+// PATTERN CONTAINER
+#pattern-container { }
+
+// HTML CANVAS
+canvas {
+  vertical-align: top;
+  cursor: pointer;
+}
+
+
+/**************************************
+CONTROL PANEL CONTAINERS
+**************************************/
+
+// TOP-LEVEL CONTROL PANEL CONTAINER
+#controls-container {
+  // LAYOUT
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: $control-panel-width;
+  height: 100vh;
+  // APPEARANCE
+  @include transition(left $animate-time-slow ease-in-out);
+  border-left: 1px solid $gray-2;
+  border-right: 1px solid $gray-2;
+}
+
+.cp-visible {
+  left: 1rem;
+}
+
+.cp-hidden {
+  left: -$control-panel-width;
+}
+
+// PATTERN INFO AND CONTROL CONTAINER
+#control-panel {
+  // LAYOUT
+  height: calc(100vh - #{$cp-footer-height});
+  padding: 1.5rem 1rem 0 1rem;
+  overflow-y: auto;
+
+  // APPEARANCE
+  background-color: rgba(255, 255, 255, 0.95);
+  // opacity: 0.8;
+}
+
+// CONTROL PANEL FOOTER
+#control-footer {
+  // LAYOUT
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: $controls-max-width;
+  height: $cp-footer-height;
+  padding: 1.5rem 1rem;
+  z-index: 88;
+
+  // APPEARANCE
+  background-color: $white;
+  border-top: 1px solid $gray-2;
+}
+
+// CONTAINER FOR EACH SET OF CONTROLS
+// CAN CONTAIN A SINGLE CONTROL OR A GROUP
+.control-element {
+  // LAYOUT
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+// CONTAINER FOR GROUPS OF CONTROLS
+.control-group-container {
+  // FLEXBOX
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(start);
+}
+
+// EACH INDIVIDUAL CONTROL ITEM IN A GROUP
+.control-group-item {
+  // LAYOUT
+  width: 50%;
+  // margin-right: 2rem;
+  // &:last-child {
+  //   margin-right: 0;
+  // }
+}
