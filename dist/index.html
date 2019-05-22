@@ -33,14 +33,19 @@
         <div class="control-element">
           <h1>Circle Pattern Generator</h1>
 
-          <p class="content"><span class="heavy">Click</span> to cycle through the shapes. Press <span class="heavy">r</span> to rotate a shape. Colors are chosen at random. If you need help getting started, try pressing <span class="heavy">q</span>.</p>
+          <p class="content"><span class="heavy">Click</span> to cycle through shapes.
+          <br>
+          <span class="heavy">R</span> to rotate a shape
+          <br>
+          <span class="heavy">C</span> to change color
+          <br><span class="heavy">Q</span> to get a head start</p>
 
-          <p class="content">This is an interactive art tool built by <a href="https://www.schnaars.xyz">Chris Schnaars</a>. You can find more info on Github.</p>
+          <p class="content">Built by <a href="https://www.schnaars.xyz">Chris Schnaars</a>. More info on <a href="https://github.com/chrisschnaars/circle-pattern-generator">Github</a>.</p>
         </div>
 
         <!-- GRID SIZE CONTROL -->
         <div class="control-element grid-size-control">
-          <div class="slider-info-container">
+          <div class="control-label-container">
             <label for="grid-size" class="control-label">Grid Size</label>
             <p id="grid-size-readout" class="control-readout">100</p>
           </div>
@@ -48,48 +53,56 @@
         </div>
 
         <!-- AUTO PLAY CONTROL -->
-        <div class="control-element autoplay-speed-control">
-          <div class="slider-info-container">
-            <label for="autoplay-speed" class="control-label">Auto-Generate Speed</label>
+        <div class="control-element">
+          <label class="control-label">Machine Assistance</label>
+          <div class="toggle-group autoplay-toggle">
+            <button id="autoplay-on" name="autoplay-toggle" value="on" type="button" class="toggle selected">
+                On
+            </button>
+            <button id="autoplay-off" name="autoplay-toggle" value="off" type="button" class="toggle">
+                  Off
+            </button>
           </div>
-          <input name="autoplay-speed" id="autoplay-speed" type="range" role="slider" min="0" max="100" value="0" step="1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
         </div>
 
         <!-- COLOR PICKERS -->
-        <div class="control-element control-group-container color-selectors">
+        <div class="control-element control-group-container bp1-hidden">
           <div class="control-group-item">
             <!-- LABEL -->
             <label for="bg-color" class="control-label">Background</label>
             <!-- BG COLOR CONTROL -->
-            <input name="bg-color" id="bg-color" type="color" value="#DBE2E7">
+            <input name="bg-color" id="bg-color" class="color-selectors" type="color" value="#DBE2E7">
           </div>
 
           <div class="control-group-item">
             <!-- LABEL -->
             <label class="control-label">Shape Colors</label>
             <!-- SHAPE COLORS -->
-            <input name="shape-color-01" id="shape-color-01" type="color" value="#00B67D">
-            <input name="shape-color-02" id="shape-color-02" type="color" value="#2A3041">
-            <input name="shape-color-03" id="shape-color-03" type="color" value="#FFBF35">
+            <input class="color-selectors" name="shape-color-01" id="shape-color-01" type="color" value="#00B67D">
+            <input class="color-selectors" name="shape-color-02" id="shape-color-02" type="color" value="#2A3041">
+            <input class="color-selectors" name="shape-color-03" id="shape-color-03" type="color" value="#FFBF35">
           </div>
         </div>
 
         <!-- BUTTONS -->
         <div class="control-element">
           <button id="save-btn" class="primary-button" type="button" name="Save" aria-label="Save Pattern">
-            Save Pattern (s)
+            Download Pattern
           </button>
         </div>
-
-      </div>
-
-      <!-- MENU HINT -->
-      <div id="control-footer">
-        <p>Show and hide this menu using the <span class="heavy">shift</span> key.</p>
       </div>
 
     <!-- END MENU -->
     </div>
+
+    <!-- MENU HINT -->
+    <div id="control-panel-toggle" class="cp-toggle-max">
+        <button id="menu-toggle-btn" class="text-button" name="toggle-menu" aria-label="toggle-menu" >&larr; Hide</button>
+    </div>
+<!--
+    <div id="control-footer-min">
+        <button id="show-menu-btn" class="text-button" name="show-menu" aria-label="show-menu" >Menu &rarr;</button>
+    </div> -->
 
     <!-- CANVAS CONTAINER -->
     <div id="pattern-container">

@@ -1,28 +1,56 @@
-/*
- ALL INTERACTIVE CONTROLS
-*/
+// ===========================================
+// CONTROL ELEMENT CONTAINERS
+// ===========================================
+
+
+// CONTAINER FOR EACH SET OF CONTROLS
+// CAN CONTAIN A SINGLE CONTROL OR A GROUP
+.control-element, .btn-element {
+  // LAYOUT
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+// CONTAINER FOR GROUPS OF CONTROLS
+.control-group-container {
+  // FLEXBOX
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(flex-start);
+}
+
+// EACH INDIVIDUAL CONTROL ITEM IN A GROUP
+// ONLY USE WHEN PART OF CONTROL GROUP CONTAINER
+.control-group-item {
+  // LAYOUT
+  width: 50%;
+}
+
+// CONTAINER FOR CONTROL ITEM'S LABEL AND READOUT
+// ONLY NECESSARY WHEN THERE IS MORE INFO THAN JUST LABEL
+.control-label-container {
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+}
+
 
 // ===========================================
-// GLOBAL SETTINGS
+// GLOBAL CONTROL SETTINGS
 // ===========================================
 
 // GLOBAL STYLE FOR ALL CONTROL BUTTONS
 input, button {
   // LAYOUT
   height: $controls-height;
-  vertical-align: middle;
 
   // APPEARANCE
+  // background: $gray-2;
   font-size: $ui-type-size;
   line-height: $ui-line-height;
   font-family: inherit;
-
-  // BEHAVIOR
   cursor: pointer;
-
-  &:active {
-    opacity: 0.9;
-  }
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -32,8 +60,6 @@ body:not(.user-is-tabbing) textarea:focus {
   outline: none;
 }
 
-
-
 // ===========================================
 // GLOBAL BUTTON STYLE
 // ===========================================
@@ -41,35 +67,30 @@ body:not(.user-is-tabbing) textarea:focus {
 // DEFAULT BUTTON STYLES
 button {
 	// LAYOUT
+  width: 100%;
 	display: inline-block;
 	-webkit-appearance: none;
   -moz-appearance: none;
 	margin: 0;
-  width: 100%;
 
 	// APPERANCE
-  background: $white;
   color: $black;
 	border: 1px solid $black;
 	text-align: center;
 	text-decoration: none;
   @include padding(0, 1.25);
   @include border-radius($btn-border-radius);
-  @include global-box-shadow;
 
 	// BEHAVIOR
   // @include transition(background $animate-time-fast ease-in-out);
 }
 
-button:hover {
-  // APPEARANCE
-  background-color: $black;
-  color: $white;
+button:hover, button:focus {
+  opacity: $btn-hover-opacity;
 }
 
 button:active {
-  box-shadow: none;
-
+  opacity: $btn-active-opacity;
 }
 
 button > * {
@@ -91,12 +112,10 @@ button > * {
   background-position: center;
 
   &:hover {
-    opacity: 0.98;
+    background-color: $black;
   }
 
 }
-
-
 
 // ===========================================
 // SECONDARY BUTTON
@@ -111,38 +130,36 @@ button > * {
 //   @include padding(0, 0);
 // }
 
-// // ===========================================
-// // TEXT BUTOTNS (LOOK LIKE LINKS)
-// // ===========================================
-//
-// .text-button {
-//   // LAYOUT
-// 	display: block;
-//   height: $content-line-height;
-// 	// APPERANCE
-// 	border: none;
-//   background: none;
-// 	text-align: left;
-//   @include border-radius(0);
-//   border-bottom: 1px solid $primary-color;
-//   padding: 0;
-//   // TEXT
-//   font-size: $content-font-size;
-//   line-height: $content-line-height;
-//   color: $primary-color;
-// }
-//
-// .text-button:hover {
-//   // APPEARANCE
-//   cursor: pointer;
-//   background-color: $white;
-//   border-bottom: none;
-// }
-//
-// .text-button:focus {
-//   // APPEARANCE
-//   background-color: $white;
-// }
+// ===========================================
+// TEXT BUTOTNS (LOOK LIKE LINKS)
+// ===========================================
+
+.text-button {
+  // LAYOUT
+  width: auto;
+  height: 1.25rem;
+  margin-left: 1rem;
+  &:first-child {
+    margin-left: 0;
+  }
+	// APPERANCE
+	border: none;
+  background: none;
+	text-align: left;
+  background-color: $white;
+  @include border-radius(0);
+  padding: 0;
+  // TEXT
+  font-size: $p-font-size-sm;
+  line-height: $p-line-height;
+  color: $black;
+}
+
+.text-button:hover, .text-button:focus {
+  // APPEARANCE
+  border-bottom: none;
+  background-color: $white;
+}
 
 
 // ===========================================
@@ -160,22 +177,34 @@ div.toggle-group {
 // TOGGLE BUTTON MODIFICATION
 button.toggle {
   // APPEARANCE
+  // border: 1px solid $gray-3;
+  border: none;
+  background-color: $gray-1;
+  color: $black;
   @include border-radius(0);
   &:first-child {
     @include border-radii($btn-border-radius, 0, 0, $btn-border-radius);
   }
   &:last-child {
+    border-left: none;
     @include border-radii(0, $btn-border-radius, $btn-border-radius, 0);
+  }
+  &:hover {
+    // background-color: $white;
+    // color: $black;
   }
   // FLEX ITEM STYLES
   @include flex(1);
 }
 
-
 // ACTIVE CLASS FOR THE SELECTED BUTTON
 button.toggle.selected {
 	background-color: $black;
-	color: $white;
+  color: $white;
+  // border-color: $black;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 
@@ -187,13 +216,6 @@ button.toggle.selected {
 input[type=range] {
 	@include input-type-range;
   margin: 0;
-}
-
-// GROUP FOR SLIDER LABEL AND READOUT
-.slider-info-container {
-  @include flexbox;
-  @include flex-flow(row nowrap);
-  @include justify-content(space-between);
 }
 
 // RGB SLIDER VALUE READOUT

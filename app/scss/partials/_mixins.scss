@@ -2,33 +2,26 @@
 // RESPONSIVE / MEDIA QUERIES
 // ===========================================
 
-// // SMALLEST SCREENS
-// @mixin bp1 {
-//   @media (max-width: #{$bp-1}) {
-//     @content;
-//   }
-// }
-//
-// // SMALLEST SCREENS
-// @mixin bp2 {
-//   @media (max-width: #{$bp-2}) {
-//     @content;
-//   }
-// }
-//
-// // HIDE ON SMALLEST SCREENS
-// .bp1-hidden {
-//   @media (max-width: #{$bp-1}) {
-//     display: none !important;
-//   }
-// }
-//
-// // SHOW ON SMALLEST SCREENS
-// .bp1-visible {
-//   @media (min-width: #{$bp-1}) {
-//       display: none;
-//     }
-// }
+// SMALLEST SCREENS
+@mixin bp1 {
+  @media (max-width: #{$bp-1}) {
+    @content;
+  }
+}
+
+// HIDE ON SMALLEST SCREENS
+.bp1-hidden {
+  @media (max-width: #{$bp-1}) {
+    display: none !important;
+  }
+}
+
+// SHOW ON SMALLEST SCREENS
+.bp1-visible {
+  @media (min-width: #{$bp-1}) {
+      display: none;
+    }
+}
 
 // ===========================================
 // SPACING, SIZING AND POSITIONING

@@ -13,7 +13,7 @@ $p-font-size-sm:            0.875rem !default;
 $h1-line-height:            2rem !default;
 $p-line-height:             1.5 !default;
 
-// FONT WEIGHTS
+// FONT WEI GHTS
 $font-weight-heavy:         700 !default;
 $font-weight-normal:        400 !default;
 
@@ -36,7 +36,7 @@ $spacing-unit:            1rem !default;
 
 // CONTROL PANEL
 $control-panel-width:     24rem !default;
-$cp-footer-height:        4.5rem !default;
+$cp-footer-height:        3rem !default;
 
 // CONTROLS
 $controls-max-width:      80rem !default;
@@ -58,6 +58,10 @@ $gray-2: #CED4DA;
 $gray-3: #868E96;
 $black:  #212529;
 
+// OPACITY CHANGES
+$btn-hover-opacity: 0.85 !default;
+$btn-active-opacity: 0.75 !default;
+
 /**************************************
 ANIMATION BEHAVIORS
 **************************************/
@@ -70,3 +74,9 @@ STYLING
 **************************************/
 
 $btn-border-radius: 0.25rem;
+
+/**************************************
+RESPONSIVE BREAKPOINTS
+**************************************/
+
+$bp-1: $control-panel-width;
